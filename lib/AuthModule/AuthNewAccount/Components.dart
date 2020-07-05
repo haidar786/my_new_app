@@ -30,7 +30,8 @@ class _CustomFromState extends State<CustomForm>{
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
-      child: Column(
+      child: SingleChildScrollView(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             TextFormField(
@@ -73,6 +74,7 @@ class _CustomFromState extends State<CustomForm>{
               onPressed: ValidateAndSubmit,
             ),
           ]
+      ),
       ),
     );
   }
