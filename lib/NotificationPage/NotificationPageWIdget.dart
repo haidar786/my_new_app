@@ -11,7 +11,12 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 void main() {
   runApp(NotificationPageWidget());
+
 }
+  List<avatar> avatars =[avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()) ];
+  List<String> text =[mockString(),mockString(),mockString(),mockString(),mockString()];
+  List<DateTime> dates= [mockDate(),mockDate(),mockDate(),mockDate(),mockDate()];
+  List<String> names=[mockName(),mockName(),mockName(),mockName(),mockName()];
 
 class NotificationPageWidget extends StatefulWidget{
 
@@ -23,11 +28,8 @@ class NotificationPageWidget extends StatefulWidget{
 
 class _NotificationPageState extends State<NotificationPageWidget> {
 
-  static List<avatar> avatars =[];
-  static List<String> text =[];
-  static List<DateTime> dates= [];
-  static List<String> names=[];
-  RefreshController _controller= new RefreshController(initialRefresh: false);
+
+  //RefreshController _controller= new RefreshController(initialRefresh: false);
 
 
   @override
@@ -38,41 +40,17 @@ class _NotificationPageState extends State<NotificationPageWidget> {
         appBar: buildAppBar("Notifications"),
         //bottomNavigationBar: bottomBar(),
         drawer: buildDrawer(),
-        body: Container(
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height:20
-                ),
-                Text("Recent Announcements"),
-                Divider(
-                  color: Colors.blueGrey,
-                  height: 20,
-                  thickness: 0.6,
-                  indent: 10,
-                  endIndent: 10,
-                ),
-                ScrollableList(avatars, text, names, dates, context)
-              ],
-            ),
+        body: Column(
+          children: <Widget>[
+            Text("Recent Announcements"),
+            ScrollableList(avatars, text, names, dates, context)
+            ],
         ),
-      )
+      ),
     );
   }
 
-  void _OnRefresh() {
-    _controller.refreshCompleted();
-  }
 
-  void _onLoading() async {
 
-    for(int i=0; i<5; i++){
-      avatars[i]= avatar(Avataaar.random());
-      dates[i] = mockDate();
-      text[i]=mockString();
-      names[i]=mockName();
-    }
-    if (mounted) setState(() {});
-    _controller.loadComplete();
-  }
+
 }
