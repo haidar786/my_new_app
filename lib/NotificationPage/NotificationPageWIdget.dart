@@ -11,6 +11,7 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 void main() {
   runApp(NotificationPageWidget());
+  int i =5;
 
 }
   List<avatar> avatars =[avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()), avatar(Avataaar.random()) ];
