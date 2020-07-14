@@ -38,13 +38,12 @@ class _NotificationPageState extends State<NotificationPageWidget> {
     return MaterialApp(
       color: HexColour("#FAFAFA"),
       home: Scaffold(
-        appBar: buildAppBar("Notifications"),
-        //bottomNavigationBar: bottomBar(),
-        drawer: buildDrawer(),
-        body: Column(
+        body: ListView(
+          physics: AlwaysScrollableScrollPhysics(),
           children: <Widget>[
+            buildAppBar("Notifications"),
             Text("Recent Announcements"),
-            ScrollableList(avatars, text, names, dates, context)
+            //ScrollableList(avatars, text, names, dates, context)
             ],
         ),
       ),

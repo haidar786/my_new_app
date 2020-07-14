@@ -3,22 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/diagnostics.dart';
 import 'package:my_new_app/Colors-Themes/HexColor.dart';
 
-PreferredSize buildAppBar(String pageName) {
-  return PreferredSize(
-    preferredSize: Size.fromHeight(30),
-    child: PressableDough(
-      child: Container(
-          child: Text('${pageName}',
-              style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 25
-              )),
-          color: HexColour("#FAFAFA"),
-        ),
-    ),
-  );
-}
+import 'DrawerComponents.dart';
+
+Widget buildAppBar(String pageName) {
+  return Row(
+          children: <Widget>[
+              SizedBox(width: 70.0),
+              Text('${pageName}',
+                style: TextStyle(
+                    fontSize: 25
+                )
+              ),
+          ]
+      );
+  }
 
 BoxDecoration decoration() {
   return BoxDecoration(
