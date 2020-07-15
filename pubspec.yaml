@@ -27,6 +27,8 @@ dependencies:
   pull_to_refresh: ^1.6.0
   mock_data: ^1.2.6
   dough: ^0.1.2
+  table_calendar: ^2.2.3
+  google_fonts: ^1.0.0
 
 
 
